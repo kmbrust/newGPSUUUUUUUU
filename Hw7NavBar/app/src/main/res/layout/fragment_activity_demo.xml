@@ -1,0 +1,56 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kmbru_000.hw7navbar.ActivityDemo"
+    android:background="#ffdbf9d0">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="left|top">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:id="@+id/buttonOK"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="167dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:id="@+id/buttonCan"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/buttonOK"
+            android:layout_marginBottom="95dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RadioButton"
+            android:id="@+id/radioButton3"
+            android:layout_alignParentTop="true"
+            android:layout_alignEnd="@+id/buttonOK"
+            android:layout_marginTop="153dp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckBox"
+            android:id="@+id/checkBox2"
+            android:layout_below="@id/radioButton3"
+            android:layout_alignStart="@+id/radioButton3" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Switch"
+            android:id="@+id/switch3"
+            android:layout_below="@+id/checkBox2"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</FrameLayout>

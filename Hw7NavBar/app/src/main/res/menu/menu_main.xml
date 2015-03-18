@@ -1,0 +1,50 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item android:id="@+id/action_edit"
+        android:title="Edit"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/pen2"
+        />
+
+    <item android:id="@+id/action_bluetooth"
+        android:title="Bluetooth"
+        android:orderInCategory="101"
+        app:showAsAction="always"
+        android:icon="@drawable/bluetooth"/>
+
+    <item android:id="@+id/action_help"
+        android:title="Help"
+        android:orderInCategory="105"
+        app:showAsAction="never" />
+
+
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="106"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/trash_can"
+        android:title="Delete"
+        android:orderInCategory="110"
+        android:showAsAction="always"/>
+
+
+    <item
+        android:id="@+id/fragment_item"
+        android:title="Fragment Item"
+        android:orderInCategory="120"
+        android:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_search"
+        android:title="Search"
+        android:icon="@drawable/search"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView" />
+
+
+</menu>

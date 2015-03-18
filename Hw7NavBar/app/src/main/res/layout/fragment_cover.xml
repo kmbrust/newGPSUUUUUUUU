@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/demo_icon"
+        android:layout_width="fill_parent"
+        android:layout_height="170dp"
+        android:src="@drawable/android_banner2"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:text="Kelly Brust"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:background="#003366"
+        />
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:background="#003366"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:text="Dialog Demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:background="#ff00274f"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:text="Activity Demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:background="#ff00162d"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:text="Contact Demo"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ff000c18"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:id="@+id/done" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textView_result"
+        android:layout_gravity="center"
+        android:textColor="#fff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/textView_resultt"
+        android:layout_gravity="center|right"
+        android:textColor="#fff"/>
+
+</LinearLayout>

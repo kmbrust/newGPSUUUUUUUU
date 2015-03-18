@@ -1,0 +1,43 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kmbru_000.hw7navbar.LogoutFragment">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Are you sure you want to log out?"
+            android:id="@+id/textView2"
+            android:layout_gravity="top|center"
+
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="189dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes"
+            android:id="@+id/radioButton"
+            android:checked="true"
+            android:layout_centerVertical="true"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_marginStart="44dp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:id="@+id/radioButton2"
+            android:layout_below="@+id/radioButton"
+            android:layout_alignStart="@+id/radioButton" />
+
+    </RelativeLayout>
+
+</FrameLayout>
