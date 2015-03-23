@@ -20,7 +20,7 @@ public class BusActivity extends ActionBarActivity {
         setContentView(R.layout.activity_bus);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.drawer_layout, new PlaceholderFragment())
                     .commit();
         }
     }

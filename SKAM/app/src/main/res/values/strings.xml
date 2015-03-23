@@ -11,6 +11,9 @@
     <string name="title_activity_weather">Syracuse Weather</string>
     <string name="app_name">gpSU</string>
 
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
     <string name="change_city">Change city</string>
     <!-- <string name="google_maps_key">AIzaSyDt7tiiJD0XogOAjie95tvO1jqKgfUrXd0</string> -->
     <string name="action_busing">Busing</string>
