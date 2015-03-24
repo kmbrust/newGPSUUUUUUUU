@@ -34,7 +34,7 @@ public class Drawer_Data {
         drawerList =new ArrayList<Map<String,?>>();
 
         item = new HashMap();
-        item.put("type",TYPE0); item.put("icon", R.drawable.book); item.put("title", "Locations & Information");
+        item.put("type",TYPE0); item.put("title", "Locations & Information");
         drawerList.add(item);
 
 ////////////
