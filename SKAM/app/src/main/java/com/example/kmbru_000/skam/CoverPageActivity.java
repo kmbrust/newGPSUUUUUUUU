@@ -25,17 +25,8 @@ import android.widget.Toast;
 //import android.support.v7.widget.LinearLayoutManager;
 //import android.support.v7.widget.RecyclerView;
 
-public class CoverPageActivity extends ActionBarActivity implements CoverPageFragment.OnButtonSelectedListener{
+public class CoverPageActivity extends ActionBarActivity implements CoverPageFragment.OnButtonSelectedListener, ChooseLibFragment.OnButtonSelectedListener{
 
-//>
-/*
-    private RecyclerView mDrawerList;
-    private DrawerLayout mDrawerLayout;
-    private ArrayAdapter<String> mAdapter;
-    private ActionBarDrawerToggle mDrawerToggle;
-    private String mActivityTitle;
-    private  MyDrawerRecyclerViewAdapter mDrawerRecyclerViewAdapter;
-*/
     private RelativeLayout mDrawer;
     private DrawerLayout mDrawerLayout;
     private RecyclerView mDrawerList;
@@ -65,13 +56,7 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
             }
 
         });
-        /*mDrawerRecyclerViewAdapter.SetOnItemClickListener(new MyDrawerRecyclerViewAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(View v, int position) {
-                selectItem(position);
-            }
 
-        });*/
         mDrawerList.setAdapter(mDrawerRecyclerViewAdapter);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -95,72 +80,10 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
         if (savedInstanceState == null) {
             selectItem(0);
         }
-        /* mDrawerList = (ListView)findViewById(R.id.drawer_list);
-        mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
-        mActivityTitle = getTitle().toString();
-
-        addDrawerItems();
-        setupDrawer();
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true); */
     }
 
-
-//>
-       /* mDrawerList = (ListView)findViewById(R.id.drawer_list);
-        mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
-        mActivityTitle = getTitle().toString();
-
-        addDrawerItems();
-        setupDrawer();
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-//
-    }*/
-
-//>
-  /*  private void addDrawerItems() {
-        String[] osArray = { "Android", "iOS", "Windows", "OS X", "Linux" };
-        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
-        mDrawerList.setAdapter(mAdapter);
-
-        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(CoverPageActivity.this, "Time for an upgrade!", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void setupDrawer() {
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.drawer_open, R.string.drawer_close) {
-
-            // Called when a drawer has settled in a completely open state.
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-                getSupportActionBar().setTitle("Navigation!");
-                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-            }
-
-             Called when a drawer has settled in a completely closed state.
-            public void onDrawerClosed(View view) {
-                super.onDrawerClosed(view);
-                getSupportActionBar().setTitle(mActivityTitle);
-                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
-            }
-        };
-
-        mDrawerToggle.setDrawerIndicatorEnabled(true);
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
-    }
-*/
-
-
+    // update the main content by replacing fragments
     private void selectItem(int position) {
-        // update the main content by replacing fragments
-        Intent intent;
 
         switch (position) {
             case 0: //GPSU icon -> go to home page
@@ -169,13 +92,22 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
                         .commit();
                 break;
             case 1: //Locations & Information -> do nothing (go to libraries/dining hall info page?)
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new ChooseLibFragment())
+                        .commit();
+                break;
                 /*getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new RecyclerViewFragment().newInstance(0))
                         .commit(); */
+
+            case 2: // Libraries
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new CoverPageFragment())
+                        .commit();
                 break;
             case 3: // Libraries
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new CoverPageFragment())
+                        .replace(R.id.container, new ChooseLibFragment())
                         .commit();
                 break;
             case 4: // Dining Halls
@@ -183,9 +115,14 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
                         .replace(R.id.container, new CoverPageFragment())
                         .commit();
                 break;
+            case 5: // Libraries
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new ChooseLibFragment())
+                        .commit();
+                break;
             default: //go to home page
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new CoverPageFragment())
+                        .replace(R.id.container, new ChooseLibFragment())
                         .commit();
                 break;
         }
@@ -256,27 +193,6 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
             default:
                 break;
         }
-        /*
-        switch (id) {
-            case R.id.button1:
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.container, new PlaceholderFragment())
-                        .addToBackStack(null)
-                        .commit();
-                break;
-            case R.id.button2:
-                intent = new Intent(this, ViewPagerActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.button3:
-                intent = new Intent(this, RecyclerViewActivity.class);
-                startActivity(intent);
-                break;
-
-            default:
-                break;
-        }
-         */
     }
 
     @Override

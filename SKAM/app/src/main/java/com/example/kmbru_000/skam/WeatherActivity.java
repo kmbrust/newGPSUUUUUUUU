@@ -1,43 +1,32 @@
 package com.example.kmbru_000.skam;
 
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.text.InputType;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
+import android.view.ViewGroup;
+import android.widget.EditText;
 
-import java.io.IOException;
-import java.text.DecimalFormat;
 
-//openweathermap.org
 public class WeatherActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.fragment_main);
         setContentView(R.layout.activity_weather);
 
-        try{
-            RetrieveWeather();
-        }
-        catch (IOException ioe){
-            System.out.println("Error!");
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, new WeatherFragment())
+                    .commit();
         }
     }
-
-    private void RetrieveWeather() throws IOException {
-
-        String url = "http://api.openweathermap.org/data/2.5/weather?q=syracuse,ny";
-
-        WeatherServiceAsync task = new WeatherServiceAsync(this);
-
-        task.execute(url);
-
-    }
-
 
 
     @Override
@@ -49,74 +38,51 @@ public class WeatherActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        if (item.getItemId() == R.id.change_city) {
+            showInputDialog();
+        }
+        return false;
+    }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    private void showInputDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Change city");
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT);
+        builder.setView(input);
+        builder.setPositiveButton("Go", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                changeCity(input.getText().toString());
+            }
+        });
+        builder.show();
+    }
+
+    public void changeCity(String city) {
+        WeatherFragment wf = (WeatherFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.container);
+        wf.changeCity(city);
+        new CityPreference(this).setCity(city);
+    }
+
+}
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+
+    /**
+    public static class PlaceholderFragment extends Fragment {
+
+        public PlaceholderFragment() {
         }
 
-        return super.onOptionsItemSelected(item);
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_weather, container, false);
+            return rootView;
+        }
     }
-
-    public void sendMessage(View view) {
-        // Do something in response to button
-        Intent intent = new Intent(this, MapsActivity.class);
-        startActivity(intent);
-    }
-
-    public void SetDescription(String description) {
-        //Parses in the JSON info for weather description
-        TextView viewDescription = (TextView) this.findViewById(R.id.textDescriptionValue);
-        viewDescription.setText(description);
-
-    }
-
-    public void SetTemperature(double temperature) {
-
-        //Parses in JSON info for temperature
-        TextView view = (TextView) this.findViewById(R.id.textTemperatureValue);
-
-        //Sets decimal format
-        DecimalFormat df = new DecimalFormat("###");
-        String formattedTemperature = df.format(temperature);
-
-        view.setText(formattedTemperature + " °F");
-    }
-
-
-    public void SetPressure(double pressure) {
-
-        //Parses in JSON info for pressure
-
-        TextView viewPressure = (TextView) this.findViewById(R.id.textPressureValue);
-
-        //Sets decimal format
-        DecimalFormat df = new DecimalFormat("###.#");
-        String formattedPressure = df.format(pressure);
-
-        viewPressure.setText(formattedPressure + " mb");
-
-    }
-
-    public void SetHumidity(double humidity) {
-
-        //Parses in JSON info for humidity
-
-        TextView viewHumidity = (TextView) this.findViewById(R.id.textHumidityValue);
-
-        //Sets decimal format
-        DecimalFormat df = new DecimalFormat("###.#");
-        String formattedHumidity = df.format(humidity);
-
-        viewHumidity.setText(formattedHumidity + " %");
-    }
-}
-
-
-
-
+        */
 
