@@ -97,7 +97,7 @@ public class WeatherFragment extends Fragment {
                             "\n" + "Pressure: " + main.getString("pressure") + " hPa");
 
             currentTemperatureField.setText(
-                    String.format("%.2f", main.getDouble("temp"))+ " ℃");
+                    String.format("%.2f", main.getDouble("temp") * 9 / 5 + 32)+ "°F");
 
             DateFormat df = DateFormat.getDateTimeInstance();
             String updatedOn = df.format(new Date(json.getLong("dt")*1000));
@@ -108,7 +108,7 @@ public class WeatherFragment extends Fragment {
                     json.getJSONObject("sys").getLong("sunset") * 1000);
 
         }catch(Exception e){
-            Log.e("SimpleWeather", "One or more fields not found in the JSON data");
+            Log.e("gpSU", "One or more fields not found in the JSON data");
         }
     }
 
