@@ -51,6 +51,14 @@
             android:name=".ChooseLibActivity"
             android:label="@string/title_activity_choose_lib" >
         </activity>
+        <activity
+            android:name=".DirectionMaps"
+            android:label="@string/title_activity_direction_maps" >
+        </activity>
+        <activity
+            android:name=".Diretions"
+            android:label="@string/title_activity_diretions" >
+        </activity>
     </application>
 
 </manifest>
