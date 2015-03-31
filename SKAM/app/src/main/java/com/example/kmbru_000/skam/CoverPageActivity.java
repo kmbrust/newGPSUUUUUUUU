@@ -186,7 +186,7 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
                 startActivity(intent);
                 break;
             case R.id.settingsbutton:
-                intent = new Intent(this, CoverPageActivity.class);
+                intent = new Intent(this, Diretions.class);
                 startActivity(intent);
                 break;
 
