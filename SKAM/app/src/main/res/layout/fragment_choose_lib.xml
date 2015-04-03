@@ -2,8 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kmbru_000.skam.ChooseLibActivity$PlaceholderFragment">
-
+    tools:context="com.example.kmbru_000.skam.CoverPageActivity"
+    >
+<!--
+tools:context="com.example.kmbru_000.skam.ChooseLibActivity$PlaceholderFragment"
+-->
     <ImageView
         android:layout_width="400dp"
         android:layout_height="250dp"
@@ -55,15 +58,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bird"
-                android:id="@+id/button1"
+                android:id="@+id/bird"
                 android:layout_alignParentStart="true"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Carnegie"
-                android:id="@+id/button2"
+                android:id="@+id/carnegie"
                 android:layout_alignEnd="@+id/imageView2"
                 android:layout_weight="1"/>
         </LinearLayout>
@@ -80,14 +84,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Geology"
-                android:id="@+id/button3"
+                android:id="@+id/geology"
                 android:layout_weight="1"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Law"
-                android:id="@+id/button4"
+                android:id="@+id/law"
                 android:layout_alignParentEnd="true"
                 android:layout_weight="1"/>
         </LinearLayout>
@@ -104,18 +108,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Architecture"
-                android:id="@+id/button5"
+                android:id="@+id/architecture"
                 android:layout_alignParentBottom="true"
-                android:layout_alignEnd="@+id/button3"
+                android:layout_alignEnd="@+id/geology"
                 android:layout_weight="1"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="MLK Jr."
-                android:id="@+id/button6"
-                android:layout_alignBottom="@+id/button5"
-                android:layout_alignStart="@+id/button4"
+                android:id="@+id/mlk"
+                android:layout_alignBottom="@+id/architecture"
+                android:layout_alignStart="@+id/law"
                 android:layout_weight="1"/>
         </LinearLayout>
 
@@ -127,22 +131,14 @@
             android:id="@+id/linearlayout4"
             android:layout_below="@+id/linearlayout3"
             android:layout_alignParentStart="true">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Law"
-                android:id="@+id/button7"
-                android:layout_alignParentBottom="true"
-                android:layout_alignEnd="@+id/button5"
-                android:layout_weight="1"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Moon (ESF)"
-                android:id="@+id/button8"
-                android:layout_alignBottom="@+id/button7"
-                android:layout_alignStart="@+id/button6"
+                android:id="@+id/moon"
+                android:layout_alignBottom="@+id/law"
+                android:layout_alignStart="@+id/mlk"
                 android:layout_weight="1"/>
         </LinearLayout>
 

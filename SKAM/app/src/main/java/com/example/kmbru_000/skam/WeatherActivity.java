@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,11 +17,13 @@ import android.widget.EditText;
 
 public class WeatherActivity extends ActionBarActivity {
 
+   // private Toolbar mToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-
+    //    mToolbar = (Toolbar) findViewById(R.id.toolbar);
+    //    setSupportActionBar(mToolbar);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new WeatherFragment())

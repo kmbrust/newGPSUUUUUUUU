@@ -4,6 +4,7 @@
     <string name="google_maps_key">AIzaSyCGVJNQJ_79rTSLX63o9kVHRYmmkBC8jWE</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="action_search">Action Search</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_cover_page">gpSU</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>

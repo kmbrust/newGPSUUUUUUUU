@@ -24,6 +24,7 @@ import android.os.Handler;
 
 public class WeatherFragment extends Fragment {
 
+
     Typeface weatherFont;
 
     TextView cityField;

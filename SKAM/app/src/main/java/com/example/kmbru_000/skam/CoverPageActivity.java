@@ -2,9 +2,12 @@ package com.example.kmbru_000.skam;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -25,7 +29,9 @@ import android.widget.Toast;
 //import android.support.v7.widget.LinearLayoutManager;
 //import android.support.v7.widget.RecyclerView;
 
-public class CoverPageActivity extends ActionBarActivity implements CoverPageFragment.OnButtonSelectedListener, ChooseLibFragment.OnButtonSelectedListener{
+public class CoverPageActivity extends ActionBarActivity
+        implements CoverPageFragment.OnButtonSelectedListener, ChooseLibFragment.OnButtonSelectedListener,
+         LibCarnegie.OnFragmentInteractionListener, LibLaw.OnFragmentInteractionListener {
 
     private RelativeLayout mDrawer;
     private DrawerLayout mDrawerLayout;
@@ -37,6 +43,8 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
     private CharSequence mDrawerTitle;
     private CharSequence mTitle;
     private String[] mPlanetTitles;
+
+
     //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +56,7 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
         mDrawer = (RelativeLayout) findViewById(R.id.drawer);
         mDrawerList = (RecyclerView) findViewById(R.id.drawer_list);
         mDrawerList.setLayoutManager(new LinearLayoutManager(this));
-        mDrawerRecyclerViewAdapter = new MyDrawerRecyclerViewAdapter(this,  (new Drawer_Data()).getDrawerList());
+        mDrawerRecyclerViewAdapter = new MyDrawerRecyclerViewAdapter(this, (new Drawer_Data()).getDrawerList());
         mDrawerRecyclerViewAdapter.SetOnItemClickListener(new MyDrawerRecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int position) {
@@ -86,28 +94,32 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
     private void selectItem(int position) {
 
         switch (position) {
-            case 0: //GPSU icon -> go to home page
+            case 0://Locations & Information -> do nothing (go to libraries/dining hall info page?)
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new CoverPageFragment())
+                        .addToBackStack("Home")
                         .commit();
                 break;
-            case 1: //Locations & Information -> do nothing (go to libraries/dining hall info page?)
+            case 1: // Libraries
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new ChooseLibFragment())
+                        .addToBackStack("Libraries")
                         .commit();
                 break;
                 /*getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new RecyclerViewFragment().newInstance(0))
                         .commit(); */
 
-            case 2: // Libraries
+            case 2: //Dining Halls
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new CoverPageFragment())
+                        .addToBackStack("Dining")
                         .commit();
                 break;
             case 3: // Libraries
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new ChooseLibFragment())
+                        .addToBackStack("")
                         .commit();
                 break;
             case 4: // Dining Halls
@@ -140,7 +152,7 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
         super.onConfigurationChanged(newConfig);
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
-//
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -157,7 +169,7 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(R.id.drawer_layout, PlaceholderFragment.newInstance(id))
                 .commit();
 
@@ -190,6 +202,49 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
                 startActivity(intent);
                 break;
 
+            case R.id.bird:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new LibBird())
+                        .addToBackStack("Bird Library")
+                        .commit();
+                break;
+
+            case R.id.carnegie:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new LibCarnegie())
+                        .addToBackStack("Carnegie Library")
+                        .commit();
+                break;
+            case R.id.geology:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new LibGeology())
+                        .addToBackStack("Geology Library")
+                        .commit();
+                break;
+            case R.id.law:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new LibLaw())
+                        .addToBackStack("Law Library")
+                        .commit();
+                break;
+            case R.id.architecture:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new LibBird())
+                        .addToBackStack("Architecture Reading Room")
+                        .commit();
+                break;
+            case R.id.mlk:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new LibBird())
+                        .addToBackStack("MLK Jr. Library")
+                        .commit();
+                break;
+            case R.id.moon:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, new LibBird())
+                        .addToBackStack("Moon Library (ESF)")
+                        .commit();
+                break;
             default:
                 break;
         }
@@ -204,6 +259,16 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
             super.onBackPressed();
         }
     }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+/*
+    @Override
+    public void onFragmentInteraction(Uri uri) { ///////////////////////////////////////////////////////////
+
+    } */
 
     /**
      * A placeholder fragment containing a simple view.
@@ -231,16 +296,6 @@ public class CoverPageActivity extends ActionBarActivity implements CoverPageFra
 
             View rootView = inflater.inflate(R.layout.fragment_cover_page, container, false);
 
-           /* int option = getArguments().getInt(ARG_OPTION);
-
-            switch (option) {
-                case R.id.busbutton:
-                    rootView = inflater.inflate(R.layout.fragment_busing, container, false);
-                    break;
-                case R.id.settingsbutton:
-                    rootView = inflater.inflate(R.layout.fragment_settings, container, false);
-                    break;
-            }*/
             return rootView;
         }
     }
