@@ -76,12 +76,18 @@ public class DirectionMaps extends FragmentActivity {
         String url = "https://maps.googleapis.com/maps/api/directions/"
                 + output + "?" + params;
         String origin ="LifeSciencesComplexSyracuse";
-        origin = intent.getStringExtra(Diretions.START).replaceAll("\\s", "");
+        origin = intent.getStringExtra(Directions.START).replaceAll("\\s", "");
         if(origin.toLowerCase().equals("currentlocation")) {
             origin = myLocation.getLatitude() + "," + myLocation.getLongitude();
         }
+        if(origin.toLowerCase().substring(0,11).equals("lifesciences")){
+            origin="LifeSciencesComplexSyracuse";
+        }
         String destianation ="LinkSyracuse";
-        destianation = intent.getStringExtra(Diretions.DESTINATION).replaceAll("\\s", "");
+        destianation = intent.getStringExtra(Directions.DESTINATION).replaceAll("\\s", "");
+        if(destianation.toLowerCase().substring(0,11).equals("lifesciences")){
+            destianation="LifeSciencesComplexSyracuse";
+        }
         String waypoint = "";
         url = "https://maps.googleapis.com/maps/api/directions/json?origin="+origin+"&destination="+destianation+"&waypoints="+waypoint+"&mode=walking";
         System.out.println(url);

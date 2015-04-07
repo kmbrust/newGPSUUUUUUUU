@@ -64,7 +64,7 @@ public class Directions extends ActionBarActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_diretions, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_directions, container, false);
             return rootView;
         }
     }
