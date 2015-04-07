@@ -47,6 +47,15 @@
             android:name=".WeatherActivity"
             android:label="@string/title_activity_weather" >
         </activity>
+
+        <activity
+            android:name=".DirectionMaps"
+            android:label="@string/title_activity_direction_maps" >
+        </activity>
+        <activity
+            android:name=".Directions"
+            android:label="@string/title_activity_diretions" >
+        </activity>
     </application>
 
 </manifest>

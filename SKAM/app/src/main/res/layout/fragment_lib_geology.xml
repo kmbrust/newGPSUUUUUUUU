@@ -12,7 +12,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView3"
+            android:id="@+id/geology"
             android:src="@drawable/geology"
             android:scaleType="fitXY"
             android:layout_alignParentTop="true"

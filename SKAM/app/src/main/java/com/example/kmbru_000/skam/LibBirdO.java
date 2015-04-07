@@ -9,34 +9,32 @@ import android.view.ViewGroup;
 
 
 /**
- * A simple {@link android.support.v4.app.Fragment} subclass.
+ * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * {@link LibBirdO.OnButtonSelectedListener} interface
  * to handle interaction events.
  * Use the {@link LibBirdO#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class LibGeology extends Fragment {
+public class LibBirdO extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
 
-    // private OnFragmentInteractionListener mListener;
-    private OnButtonSelectedListener mListener;
+   // private OnFragmentInteractionListener mListener;
+   private OnButtonSelectedListener mListener;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
      * @return A new instance of fragment LibBird.
      */
-    public static LibGeology newInstance(String param1, String param2) {
-        LibGeology fragment = new LibGeology();
+    public static LibBirdO newInstance(String param1, String param2) {
+        LibBirdO fragment = new LibBirdO();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
     }
 
-    public LibGeology() {
+    public LibBirdO() {
         // Required empty public constructor
     }
 
@@ -50,7 +48,7 @@ public class LibGeology extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lib_geology, container, false);
+        return inflater.inflate(R.layout.fragment_lib_bird, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -63,12 +61,12 @@ public class LibGeology extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-      /*  try {
+        try {
             mListener = (OnButtonSelectedListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
                     + " must implement OnFragmentInteractionListener");
-        }*/
+        }
     }
 
     @Override

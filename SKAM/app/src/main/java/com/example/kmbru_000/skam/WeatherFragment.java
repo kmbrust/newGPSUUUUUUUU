@@ -50,7 +50,6 @@ public class WeatherFragment extends Fragment {
         detailsField = (TextView)rootView.findViewById(R.id.details_field);
         currentTemperatureField = (TextView)rootView.findViewById(R.id.current_temperature_field);
         weatherIcon = (TextView)rootView.findViewById(R.id.weather_icon);
-
         weatherIcon.setTypeface(weatherFont);
         return rootView;
     }
@@ -99,7 +98,7 @@ public class WeatherFragment extends Fragment {
                             "\n" + "Pressure: " + main.getString("pressure") + " hPa");
 
             currentTemperatureField.setText(
-                    String.format("%.2f", main.getDouble("temp"))+ " ℃");
+                    String.format("%.2f", main.getDouble("temp") * 9 / 5 + 32)+ "°F");
 
             DateFormat df = DateFormat.getDateTimeInstance();
             String updatedOn = df.format(new Date(json.getLong("dt")*1000));
@@ -110,7 +109,7 @@ public class WeatherFragment extends Fragment {
                     json.getJSONObject("sys").getLong("sunset") * 1000);
 
         }catch(Exception e){
-            Log.e("SimpleWeather", "One or more fields not found in the JSON data");
+            Log.e("gpSU", "One or more fields not found in the JSON data");
         }
     }
 
@@ -151,3 +150,4 @@ public class WeatherFragment extends Fragment {
 
 
 }
+

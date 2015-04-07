@@ -3,8 +3,6 @@ package com.example.kmbru_000.skam;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
@@ -19,19 +17,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 //import android.support.v7.widget.LinearLayoutManager;
 //import android.support.v7.widget.RecyclerView;
 
 public class CoverPageActivity extends ActionBarActivity
         implements CoverPageFragment.OnButtonSelectedListener, ChooseLibFragment.OnButtonSelectedListener,
-         LibCarnegie.OnFragmentInteractionListener, LibLaw.OnFragmentInteractionListener {
+        LibCarnegie.OnFragmentInteractionListener, LibLaw.OnFragmentInteractionListener,
+        LibMlk.OnFragmentInteractionListener, LibMoon.OnFragmentInteractionListener,
+        LibArch.OnFragmentInteractionListener, LibBird.OnFragmentInteractionListener{
 
     private RelativeLayout mDrawer;
     private DrawerLayout mDrawerLayout;
@@ -116,22 +111,18 @@ public class CoverPageActivity extends ActionBarActivity
                         .addToBackStack("Dining")
                         .commit();
                 break;
-            case 3: // Libraries
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new ChooseLibFragment())
-                        .addToBackStack("")
-                        .commit();
+            case 3: // Border Line
+
                 break;
-            case 4: // Dining Halls
+            case 4:  // Change Theme
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new CoverPageFragment())
                         .commit();
                 break;
-            case 5: // Libraries
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new ChooseLibFragment())
-                        .commit();
+            case 5: // Exit
+                System.exit(1);
                 break;
+
             default: //go to home page
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.container, new ChooseLibFragment())
@@ -198,13 +189,13 @@ public class CoverPageActivity extends ActionBarActivity
                 startActivity(intent);
                 break;
             case R.id.settingsbutton:
-                intent = new Intent(this, CoverPageActivity.class);
+                intent = new Intent(this, Directions.class);
                 startActivity(intent);
                 break;
 
             case R.id.bird:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new LibBird())
+                        .replace(R.id.container, new LibBirdO())
                         .addToBackStack("Bird Library")
                         .commit();
                 break;
@@ -229,19 +220,19 @@ public class CoverPageActivity extends ActionBarActivity
                 break;
             case R.id.architecture:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new LibBird())
+                        .replace(R.id.container, new LibArch())
                         .addToBackStack("Architecture Reading Room")
                         .commit();
                 break;
             case R.id.mlk:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new LibBird())
+                        .replace(R.id.container, new LibMlk())
                         .addToBackStack("MLK Jr. Library")
                         .commit();
                 break;
             case R.id.moon:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container, new LibBird())
+                        .replace(R.id.container, new LibMoon())
                         .addToBackStack("Moon Library (ESF)")
                         .commit();
                 break;

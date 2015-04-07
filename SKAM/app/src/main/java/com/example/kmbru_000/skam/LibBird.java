@@ -3,7 +3,7 @@ package com.example.kmbru_000.skam;
 import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,20 +12,19 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link LibBird.OnButtonSelectedListener} interface
+ * {@link LibBird.OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link LibBird#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class LibBird extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
 
-   // private OnFragmentInteractionListener mListener;
-   private OnButtonSelectedListener mListener;
+    private OnFragmentInteractionListener mListener;
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
-     *
+
      * @return A new instance of fragment LibBird.
      */
     public static LibBird newInstance(String param1, String param2) {
@@ -42,7 +41,6 @@ public class LibBird extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -53,17 +51,17 @@ public class LibBird extends Fragment {
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    /*public void onButtonPressed(Uri uri) {
+    public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
     }
-*/
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            mListener = (OnButtonSelectedListener) activity;
+            mListener = (OnFragmentInteractionListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -86,14 +84,8 @@ public class LibBird extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-  /*  public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+    public interface OnFragmentInteractionListener {
         public void onFragmentInteraction(Uri uri);
     }
-*/
-    public interface OnButtonSelectedListener {
-        // TODO: Update argument type and name
-        public void onButtonItemSelected(int position);
 
-    }
 }

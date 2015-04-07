@@ -12,7 +12,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView3"
+            android:id="@+id/law"
             android:src="@drawable/law"
             android:scaleType="fitXY"
             android:maxWidth="300dp"
