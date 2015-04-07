@@ -181,7 +181,7 @@ public class CoverPageActivity extends ActionBarActivity
                 startActivity(intent);
                 break;
             case R.id.busbutton:
-                intent = new Intent(this, CoverPageActivity.class);
+                intent = new Intent(this, BusActivity.class);
                 startActivity(intent);
                 break;
             case R.id.weatherbutton:
