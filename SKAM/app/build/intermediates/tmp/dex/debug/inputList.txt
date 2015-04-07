@@ -1,0 +1,8 @@
+/Users/99yankee/Documents/newGPSUUUUUUUU/SKAM/app/build/intermediates/classes/debug
+/Users/99yankee/Documents/newGPSUUUUUUUU/SKAM/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-058e4514a58e774d5cfeea21562f7c6843309246.jar
+/Users/99yankee/Documents/newGPSUUUUUUUU/SKAM/app/build/intermediates/pre-dexed/debug/classes-43c4deaf96575c9a99da9240d5491afaedb78738.jar
+/Users/99yankee/Documents/newGPSUUUUUUUU/SKAM/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-2c528a271bbea2eb6daef8953a332d8ced2c6adc.jar
+/Users/99yankee/Documents/newGPSUUUUUUUU/SKAM/app/build/intermediates/pre-dexed/debug/classes-05039f7c8110f854aa59d7bf43b202dc3b70761e.jar
+/Users/99yankee/Documents/newGPSUUUUUUUU/SKAM/app/build/intermediates/pre-dexed/debug/classes-6d39d889bb63922bccfb78ad79a02ce8ecf97043.jar
+/Users/99yankee/Documents/newGPSUUUUUUUU/SKAM/app/build/intermediates/pre-dexed/debug/classes-c86ec3aa056a72c722f48e3ec5a0cba53c664aca.jar
+/Users/99yankee/Documents/newGPSUUUUUUUU/SKAM/app/build/intermediates/pre-dexed/debug/classes-6417b4e5a77316d2db1ee29699b863b597c75b6b.jar

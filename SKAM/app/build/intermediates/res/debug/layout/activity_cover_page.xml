@@ -1,0 +1,39 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kmbru_000.gps.CoverPageActivity">
+        <!-- The main content view -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include layout="@layout/toolbar"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+            </include>
+            <FrameLayout android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <!-- The navigation drawer -->
+        <RelativeLayout android:id="@+id/drawer"
+            android:layout_gravity="start"
+            android:background="#ffffff"
+            android:layout_width="240dp"
+            android:layout_height="match_parent">
+            <ImageView android:id="@+id/header"
+                android:src="@drawable/gpsu5"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/drawer_list"
+                android:layout_below="@+id/header"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+     </RelativeLayout>
+</android.support.v4.widget.DrawerLayout>
+<!-- From: file:/Users/99yankee/Documents/newGPSUUUUUUUU/SKAM/app/src/main/res/layout/activity_cover_page.xml -->

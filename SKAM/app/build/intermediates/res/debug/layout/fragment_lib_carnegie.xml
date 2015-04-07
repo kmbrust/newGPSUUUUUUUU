@@ -1,0 +1,29 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.kmbru_000.skam.LibCarnegie"
+    android:id="@+id/frame_carnegie">
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent" android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/carnegie"
+                android:src="@drawable/carnegie"
+                android:scaleType="fitXY"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+
+        </RelativeLayout>
+
+    </FrameLayout>
+<!-- From: file:/Users/99yankee/Documents/newGPSUUUUUUUU/SKAM/app/src/main/res/layout/fragment_lib_carnegie.xml -->
